@@ -1,0 +1,14 @@
+//
+//  Debug.xcconfig
+//  MusicSearch
+//
+//  Created by Douglas Yuen on 2021-01-27.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-MusicSearch/Pods-MusicSearch.debug.xcconfig"
+
+SERVER_URL = itunes.apple.com
+PROTOCOL = https
