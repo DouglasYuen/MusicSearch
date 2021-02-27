@@ -18,15 +18,18 @@ class AppViewController:UIViewController
 	//********************
 	
 	var loadingView:UIView?
+	let overlayWidth:CGFloat = 200 	// Points wide
+	let overlayHeight:CGFloat = 30		// Points height
+	let overlayOffset:CGFloat = 80		// Offset
 	
-	// Creates a blurry backgroudn
+	// Creates a blurry background
 	
 	var blurEffectView: UIVisualEffectView =
 	{
 		let blurEffect = UIBlurEffect(style: .dark)
 		let blurEffectView = UIVisualEffectView(effect: blurEffect)
 		
-		blurEffectView.alpha = 0.9
+		blurEffectView.alpha = 0.9 // Setting the alpha value to be 0.9 of 1.0
 		
 		// Setting the autoresizing mask to flexible for  width and height will ensure the blurEffectView is the same size as its parent view.
 		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -77,8 +80,8 @@ class AppViewController:UIViewController
 		
 		if let labelText = text
 		{
-			let textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
-			let cpoint = CGPoint(x: activityIndicator.frame.origin.x + activityIndicator.frame.size.width / 2, y: activityIndicator.frame.origin.y + 80)
+			let textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.overlayWidth, height: self.overlayHeight))
+			let cpoint = CGPoint(x: activityIndicator.frame.origin.x + activityIndicator.frame.size.width / 2, y: activityIndicator.frame.origin.y + self.overlayOffset)
 			textLabel.center = cpoint
 			textLabel.textColor = UIColor.white
 			textLabel.textAlignment = .center
