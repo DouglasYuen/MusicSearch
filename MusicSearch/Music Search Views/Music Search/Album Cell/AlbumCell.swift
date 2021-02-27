@@ -15,6 +15,10 @@ class AlbumCell: UITableViewCell
 	@IBOutlet weak var AlbumTitleLabel: UILabel!
 	@IBOutlet weak var AlbumDateLabel: UILabel!
 
+	static let cellHeight:CGFloat = 100.0 // Height of cell, set for 100 points
+	let cellCornerRadius:CGFloat = 10.0 // Preferred corner radius
+	let largeFontSize:CGFloat = 20.0 // Font size for text
+	
 	// Holds the album information for the cell.
 	// When set, update all of the other attributes inside the cell.
 	
@@ -58,18 +62,18 @@ class AlbumCell: UITableViewCell
 	
 	static var height:CGFloat
 	{
-		return 100
+		return cellHeight
 	}
 	
 	func configureCell()
 	{
-		self.ContainerView.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
-		self.ContainerView.layer.cornerRadius = 10.0
+		self.ContainerView.backgroundColor = .customGrey()
+		self.ContainerView.layer.cornerRadius = cellCornerRadius
 		self.ContainerView.layer.masksToBounds = true
 		
-		self.AlbumImageView.layer.cornerRadius = 10.0
+		self.AlbumImageView.layer.cornerRadius = cellCornerRadius
 		self.AlbumImageView.layer.masksToBounds = true
 		
-		self.AlbumTitleLabel.font = .boldSystemFont(ofSize: 20)
+		self.AlbumTitleLabel.font = .boldSystemFont(ofSize: largeFontSize)
 	}
 }

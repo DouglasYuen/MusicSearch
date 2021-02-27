@@ -32,6 +32,10 @@ class MusicDetailViewController: AppViewController
 	
 	let viewModel = MusicDetailViewModel()
 	
+	let cellCornerRadius:CGFloat = 10.0 // Preferred corner radius
+	let mediumFontSize:CGFloat = 17.0 // Normal font size
+	let largeFontSize:CGFloat = 24.0		// Large font size
+	
 	//********************
 	// MARK:- VIEW FUNCTIONS
 	//********************
@@ -53,9 +57,9 @@ class MusicDetailViewController: AppViewController
 		
 		// Declare the different styles of attributed text
 		
-		let titleAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24, weight: .bold)]
-		let boldAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)]
-		let normalAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .regular)]
+		let titleAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: self.largeFontSize, weight: .bold)]
+		let boldAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: self.mediumFontSize, weight: .bold)]
+		let normalAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: self.mediumFontSize, weight: .regular)]
 		
 		// Set up the name label
 		
@@ -118,7 +122,7 @@ class MusicDetailViewController: AppViewController
 		}
 		
 		self.AlbumImageView.contentMode = .scaleAspectFill
-		self.AlbumImageView.layer.cornerRadius = 10.0
+		self.AlbumImageView.layer.cornerRadius = self.cellCornerRadius
 		self.AlbumImageView.layer.masksToBounds = true
 	}
 	
